@@ -1,0 +1,1104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LaboratorioModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LaboratorioModelStoreContainer">
+          <EntitySet Name="ANATOMOPATOLOGIA" EntityType="LaboratorioModel.Store.ANATOMOPATOLOGIA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CITOLOGIAORINA" EntityType="LaboratorioModel.Store.CITOLOGIAORINA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CITOLOGIAOTRO" EntityType="LaboratorioModel.Store.CITOLOGIAOTRO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="COLPOCITOLOGIA" EntityType="LaboratorioModel.Store.COLPOCITOLOGIA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="COLPOUSOINTERNO" EntityType="LaboratorioModel.Store.COLPOUSOINTERNO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MACRO" EntityType="LaboratorioModel.Store.MACRO" store:Type="Tables" store:Schema="dbo" store:Name="MACRO">
+            <DefiningQuery>SELECT 
+      [MACRO].[CodMacro] AS [CodMacro], 
+      [MACRO].[CodMacro1] AS [CodMacro1], 
+      [MACRO].[CodMacro2] AS [CodMacro2], 
+      [MACRO].[NombreMacro] AS [NombreMacro]
+      FROM [dbo].[MACRO] AS [MACRO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MATERIAL" EntityType="LaboratorioModel.Store.MATERIAL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MEDICO" EntityType="LaboratorioModel.Store.MEDICO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MICRO" EntityType="LaboratorioModel.Store.MICRO" store:Type="Tables" store:Schema="dbo" store:Name="MICRO">
+            <DefiningQuery>SELECT 
+      [MICRO].[CodMicro] AS [CodMicro], 
+      [MICRO].[CodMicro1] AS [CodMicro1], 
+      [MICRO].[CodMicro2] AS [CodMicro2], 
+      [MICRO].[NombreMicro] AS [NombreMicro]
+      FROM [dbo].[MICRO] AS [MICRO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NOTAANA" EntityType="LaboratorioModel.Store.NOTAANA" store:Type="Tables" store:Schema="dbo" store:Name="NOTAANA">
+            <DefiningQuery>SELECT 
+      [NOTAANA].[CodigoNota] AS [CodigoNota], 
+      [NOTAANA].[Observacion] AS [Observacion]
+      FROM [dbo].[NOTAANA] AS [NOTAANA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORIGENPACIENTE" EntityType="LaboratorioModel.Store.ORIGENPACIENTE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SUBMATERIAL" EntityType="LaboratorioModel.Store.SUBMATERIAL" store:Type="Tables" store:Schema="dbo" store:Name="SUBMATERIAL">
+            <DefiningQuery>SELECT 
+      [SUBMATERIAL].[CodMaterial] AS [CodMaterial], 
+      [SUBMATERIAL].[CodMaterial1] AS [CodMaterial1], 
+      [SUBMATERIAL].[NombreMaterial] AS [NombreMaterial]
+      FROM [dbo].[SUBMATERIAL] AS [SUBMATERIAL]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sysdiagrams" EntityType="LaboratorioModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TIPOINFORME" EntityType="LaboratorioModel.Store.TIPOINFORME" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TIPORESULTADO" EntityType="LaboratorioModel.Store.TIPORESULTADO" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_MACRO_ANATOMOPATOLOGIA" Association="LaboratorioModel.Store.FK_MACRO_ANATOMOPATOLOGIA">
+            <End Role="ANATOMOPATOLOGIA" EntitySet="ANATOMOPATOLOGIA" />
+            <End Role="MACRO" EntitySet="MACRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MICRO_ANATOMOPATOLOGIA" Association="LaboratorioModel.Store.FK_MICRO_ANATOMOPATOLOGIA">
+            <End Role="ANATOMOPATOLOGIA" EntitySet="ANATOMOPATOLOGIA" />
+            <End Role="MICRO" EntitySet="MICRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NOTAANA_ANATOMOPATOLOGIA" Association="LaboratorioModel.Store.FK_NOTAANA_ANATOMOPATOLOGIA">
+            <End Role="ANATOMOPATOLOGIA" EntitySet="ANATOMOPATOLOGIA" />
+            <End Role="NOTAANA" EntitySet="NOTAANA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIPORESULTADO_TIPOINFORME" Association="LaboratorioModel.Store.FK_TIPORESULTADO_TIPOINFORME">
+            <End Role="TIPOINFORME" EntitySet="TIPOINFORME" />
+            <End Role="TIPORESULTADO" EntitySet="TIPORESULTADO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ANATOMOPATOLOGIA">
+          <Key>
+            <PropertyRef Name="NroInfo" />
+          </Key>
+          <Property Name="NroInfo" Type="int" Nullable="false" />
+          <Property Name="FechaInf" Type="date" />
+          <Property Name="Paciente" Type="nvarchar" MaxLength="60" />
+          <Property Name="Procedencia" Type="smallint" />
+          <Property Name="MedSol" Type="smallint" />
+          <Property Name="MaterialAna1" Type="int" />
+          <Property Name="MaterialAna2" Type="smallint" />
+          <Property Name="ResumenAna1" Type="int" />
+          <Property Name="resumenAna2" Type="smallint" />
+        </EntityType>
+        <EntityType Name="CITOLOGIAORINA">
+          <Key>
+            <PropertyRef Name="NroInfo" />
+          </Key>
+          <Property Name="NroInfo" Type="int" Nullable="false" />
+          <Property Name="FechaInf" Type="smalldatetime" />
+          <Property Name="Paciente" Type="nvarchar" MaxLength="60" />
+          <Property Name="Procedencia" Type="smallint" />
+          <Property Name="MedSol" Type="smallint" />
+          <Property Name="CodCito1" Type="int" />
+          <Property Name="CodCito2" Type="smallint" />
+          <Property Name="Resumen" Type="ntext" />
+        </EntityType>
+        <EntityType Name="CITOLOGIAOTRO">
+          <Key>
+            <PropertyRef Name="NroInfo" />
+          </Key>
+          <Property Name="NroInfo" Type="int" Nullable="false" />
+          <Property Name="FechaInf" Type="smalldatetime" />
+          <Property Name="Paciente" Type="nvarchar" MaxLength="60" />
+          <Property Name="Procedencia" Type="smallint" />
+          <Property Name="MedSol" Type="smallint" />
+          <Property Name="CodMat1" Type="int" />
+          <Property Name="CodMat2" Type="smallint" />
+          <Property Name="Material" Type="ntext" />
+          <Property Name="CodRes1" Type="int" Nullable="false" />
+          <Property Name="CodRes2" Type="int" />
+          <Property Name="Resumen" Type="ntext" />
+        </EntityType>
+        <EntityType Name="COLPOCITOLOGIA">
+          <Key>
+            <PropertyRef Name="NroInfo" />
+          </Key>
+          <Property Name="NroInfo" Type="smallint" Nullable="false" />
+          <Property Name="FechaInf" Type="smalldatetime" />
+          <Property Name="Paciente" Type="nvarchar" MaxLength="60" />
+          <Property Name="FechaMens" Type="smalldatetime" />
+          <Property Name="FechaObse" Type="smalldatetime" />
+          <Property Name="Procedencia" Type="smallint" />
+          <Property Name="MedSol" Type="smallint" />
+          <Property Name="CodRes1" Type="int" />
+          <Property Name="CodRes2" Type="smallint" />
+          <Property Name="Resumen" Type="ntext" />
+          <Property Name="Trofismo" Type="nvarchar" MaxLength="950" />
+          <Property Name="Eosi" Type="smallint" />
+          <Property Name="Ciano" Type="smallint" />
+          <Property Name="Inter" Type="smallint" />
+          <Property Name="Para" Type="smallint" />
+          <Property Name="Flora" Type="nvarchar" MaxLength="950" />
+          <Property Name="Leuco" Type="nvarchar" MaxLength="950" />
+          <Property Name="Histio" Type="nvarchar" MaxLength="950" />
+          <Property Name="Glob" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="COLPOUSOINTERNO">
+          <Key>
+            <PropertyRef Name="CodigoUso" />
+          </Key>
+          <Property Name="CodigoUso" Type="smallint" Nullable="false" />
+          <Property Name="NombreUso" Type="nvarchar" MaxLength="950" />
+          <Property Name="Unidad" Type="nvarchar" MaxLength="10" />
+          <Property Name="Respuesta" Type="nvarchar" MaxLength="1" />
+          <Property Name="Cantidad" Type="smallint" />
+          <Property Name="CargaNom1" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom2" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom3" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom4" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom5" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom6" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom7" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom8" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom9" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom10" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom11" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom12" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom13" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom14" Type="nvarchar" MaxLength="950" />
+          <Property Name="CargaNom15" Type="nvarchar" MaxLength="950" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Laboratorio.dbo.MACRO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="MACRO">
+          <Key>
+            <PropertyRef Name="CodMacro" />
+          </Key>
+          <Property Name="CodMacro" Type="int" Nullable="false" />
+          <Property Name="CodMacro1" Type="int" />
+          <Property Name="CodMacro2" Type="int" />
+          <Property Name="NombreMacro" Type="ntext" />
+        </EntityType>
+        <EntityType Name="MATERIAL">
+          <Key>
+            <PropertyRef Name="CodMaterial" />
+          </Key>
+          <Property Name="CodMaterial" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="900" />
+        </EntityType>
+        <EntityType Name="MEDICO">
+          <Key>
+            <PropertyRef Name="CodMedico" />
+          </Key>
+          <Property Name="CodMedico" Type="smallint" Nullable="false" />
+          <Property Name="NombreMedico" Type="nvarchar" MaxLength="960" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="960" />
+          <Property Name="TeMedico" Type="nvarchar" MaxLength="30" />
+          <Property Name="Colegiado" Type="nvarchar" MaxLength="300" />
+          <Property Name="ObservacionesMedico" Type="ntext" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Laboratorio.dbo.MICRO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="MICRO">
+          <Key>
+            <PropertyRef Name="CodMicro" />
+            <PropertyRef Name="CodMicro1" />
+            <PropertyRef Name="CodMicro2" />
+          </Key>
+          <Property Name="CodMicro" Type="int" Nullable="false" />
+          <Property Name="CodMicro1" Type="int" Nullable="false" />
+          <Property Name="CodMicro2" Type="int" Nullable="false" />
+          <Property Name="NombreMicro" Type="ntext" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Laboratorio.dbo.NOTAANA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="NOTAANA">
+          <Key>
+            <PropertyRef Name="CodigoNota" />
+          </Key>
+          <Property Name="CodigoNota" Type="int" Nullable="false" />
+          <Property Name="Observacion" Type="ntext" />
+        </EntityType>
+        <EntityType Name="ORIGENPACIENTE">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="900" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Laboratorio.dbo.SUBMATERIAL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SUBMATERIAL">
+          <Key>
+            <PropertyRef Name="CodMaterial" />
+            <PropertyRef Name="CodMaterial1" />
+          </Key>
+          <Property Name="CodMaterial" Type="smallint" Nullable="false" />
+          <Property Name="CodMaterial1" Type="smallint" Nullable="false" />
+          <Property Name="NombreMaterial" Type="nvarchar" MaxLength="900" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TIPOINFORME">
+          <Key>
+            <PropertyRef Name="CodigoInf" />
+          </Key>
+          <Property Name="CodigoInf" Type="smallint" Nullable="false" />
+          <Property Name="NombreInforme" Type="nvarchar" MaxLength="90" />
+        </EntityType>
+        <EntityType Name="TIPORESULTADO">
+          <Key>
+            <PropertyRef Name="CodigoRes1" />
+            <PropertyRef Name="CodigoRes2" />
+            <PropertyRef Name="CodigoRes3" />
+          </Key>
+          <Property Name="CodigoRes1" Type="smallint" Nullable="false" />
+          <Property Name="CodigoRes2" Type="smallint" Nullable="false" />
+          <Property Name="CodigoRes3" Type="smallint" Nullable="false" />
+          <Property Name="NombreRes1" Type="nvarchar" MaxLength="900" />
+          <Property Name="NombreRes2" Type="nvarchar" MaxLength="900" />
+          <Property Name="NombreRes3" Type="nvarchar" MaxLength="900" />
+          <Property Name="ClaseRes" Type="nvarchar" MaxLength="900" />
+        </EntityType>
+        <Association Name="FK_MACRO_ANATOMOPATOLOGIA">
+          <End Role="ANATOMOPATOLOGIA" Type="LaboratorioModel.Store.ANATOMOPATOLOGIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MACRO" Type="LaboratorioModel.Store.MACRO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ANATOMOPATOLOGIA">
+              <PropertyRef Name="NroInfo" />
+            </Principal>
+            <Dependent Role="MACRO">
+              <PropertyRef Name="CodMacro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MICRO_ANATOMOPATOLOGIA">
+          <End Role="ANATOMOPATOLOGIA" Type="LaboratorioModel.Store.ANATOMOPATOLOGIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MICRO" Type="LaboratorioModel.Store.MICRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANATOMOPATOLOGIA">
+              <PropertyRef Name="NroInfo" />
+            </Principal>
+            <Dependent Role="MICRO">
+              <PropertyRef Name="CodMicro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NOTAANA_ANATOMOPATOLOGIA">
+          <End Role="ANATOMOPATOLOGIA" Type="LaboratorioModel.Store.ANATOMOPATOLOGIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NOTAANA" Type="LaboratorioModel.Store.NOTAANA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ANATOMOPATOLOGIA">
+              <PropertyRef Name="NroInfo" />
+            </Principal>
+            <Dependent Role="NOTAANA">
+              <PropertyRef Name="CodigoNota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIPORESULTADO_TIPOINFORME">
+          <End Role="TIPOINFORME" Type="LaboratorioModel.Store.TIPOINFORME" Multiplicity="1" />
+          <End Role="TIPORESULTADO" Type="LaboratorioModel.Store.TIPORESULTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOINFORME">
+              <PropertyRef Name="CodigoInf" />
+            </Principal>
+            <Dependent Role="TIPORESULTADO">
+              <PropertyRef Name="CodigoRes1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_ANATOMOPATOLOGIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NroInfo" Type="int" Mode="In" />
+          <Parameter Name="FechaInf" Type="date" Mode="In" />
+          <Parameter Name="Paciente" Type="nvarchar" Mode="In" />
+          <Parameter Name="Procedencia" Type="int" Mode="In" />
+          <Parameter Name="MedSol" Type="int" Mode="In" />
+          <Parameter Name="MaterialAna1" Type="int" Mode="In" />
+          <Parameter Name="MaterialAna2" Type="int" Mode="In" />
+          <Parameter Name="ResumenAna1" Type="int" Mode="In" />
+          <Parameter Name="ResumenAna2" Type="int" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_CITOLOGIAORINA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NroInfo" Type="int" Mode="In" />
+          <Parameter Name="FechaInf" Type="date" Mode="In" />
+          <Parameter Name="Paciente" Type="nvarchar" Mode="In" />
+          <Parameter Name="Procedencia" Type="int" Mode="In" />
+          <Parameter Name="MedSol" Type="int" Mode="In" />
+          <Parameter Name="CodCito1" Type="int" Mode="In" />
+          <Parameter Name="CodCito2" Type="int" Mode="In" />
+          <Parameter Name="Resumen" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_CITOLOGIAOTRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NroInfo" Type="int" Mode="In" />
+          <Parameter Name="FechaInf" Type="date" Mode="In" />
+          <Parameter Name="Paciente" Type="nvarchar" Mode="In" />
+          <Parameter Name="Procedencia" Type="int" Mode="In" />
+          <Parameter Name="MedSol" Type="int" Mode="In" />
+          <Parameter Name="CodRes1" Type="int" Mode="In" />
+          <Parameter Name="CodRes2" Type="int" Mode="In" />
+          <Parameter Name="Resumen" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_COLPOCITOLOGIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NroInfo" Type="int" Mode="In" />
+          <Parameter Name="FechaInf" Type="date" Mode="In" />
+          <Parameter Name="Paciente" Type="nvarchar" Mode="In" />
+          <Parameter Name="FechaMens" Type="smalldatetime" Mode="In" />
+          <Parameter Name="FechaObse" Type="smalldatetime" Mode="In" />
+          <Parameter Name="Procedencia" Type="int" Mode="In" />
+          <Parameter Name="MedSol" Type="int" Mode="In" />
+          <Parameter Name="CodRes1" Type="int" Mode="In" />
+          <Parameter Name="CodRes2" Type="int" Mode="In" />
+          <Parameter Name="Resumen" Type="ntext" Mode="In" />
+          <Parameter Name="Trofismo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Eosi" Type="int" Mode="In" />
+          <Parameter Name="Ciano" Type="int" Mode="In" />
+          <Parameter Name="Inter" Type="int" Mode="In" />
+          <Parameter Name="Para" Type="int" Mode="In" />
+          <Parameter Name="Flora" Type="nvarchar" Mode="In" />
+          <Parameter Name="Leuco" Type="nvarchar" Mode="In" />
+          <Parameter Name="Histio" Type="nvarchar" Mode="In" />
+          <Parameter Name="Glob" Type="nvarchar" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_COLPOUSOINTERNO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodigoUso" Type="int" Mode="In" />
+          <Parameter Name="NombreUso" Type="nvarchar" Mode="In" />
+          <Parameter Name="Unidad" Type="nvarchar" Mode="In" />
+          <Parameter Name="Respuesta" Type="nvarchar" Mode="In" />
+          <Parameter Name="Cantidad" Type="int" Mode="In" />
+          <Parameter Name="CargaNom1" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom2" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom3" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom4" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom5" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom6" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom7" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom8" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom9" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom10" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom11" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom12" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom13" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom14" Type="nvarchar" Mode="In" />
+          <Parameter Name="CargaNom15" Type="nvarchar" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_INFORINA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodInfOri" Type="int" Mode="In" />
+          <Parameter Name="CodInfOri1" Type="int" Mode="In" />
+          <Parameter Name="NombreInfOri" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_INFOTRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodInfOtro" Type="int" Mode="In" />
+          <Parameter Name="CodInfOtro1" Type="int" Mode="In" />
+          <Parameter Name="NombreInfOtro" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_MACRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodMacro" Type="int" Mode="In" />
+          <Parameter Name="CodMacro1" Type="int" Mode="In" />
+          <Parameter Name="CodMacro2" Type="int" Mode="In" />
+          <Parameter Name="NombreMacro" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_MATERIAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodMaterial" Type="int" Mode="In" />
+          <Parameter Name="Descripcion" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_MEDICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodMedico" Type="int" Mode="In" />
+          <Parameter Name="NombreMedico" Type="nvarchar" Mode="In" />
+          <Parameter Name="Direccion" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeMedico" Type="nvarchar" Mode="In" />
+          <Parameter Name="Colegiado" Type="nvarchar" Mode="In" />
+          <Parameter Name="ObservacionesMedico" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_MICRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodMicro" Type="int" Mode="In" />
+          <Parameter Name="CodMicro1" Type="int" Mode="In" />
+          <Parameter Name="CodMicro2" Type="int" Mode="In" />
+          <Parameter Name="NombreMicro" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_NOTAANA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodigoNota" Type="int" Mode="In" />
+          <Parameter Name="Observacion" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_NOTACOLPO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodigoNota" Type="int" Mode="In" />
+          <Parameter Name="Observacion" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_NOTAMAT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodigoNota" Type="int" Mode="In" />
+          <Parameter Name="Observacion" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_NOTAORI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodigoNota" Type="int" Mode="In" />
+          <Parameter Name="Observacion" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_ONCOLOGIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodInf" Type="int" Mode="In" />
+          <Parameter Name="CodOnco1" Type="int" Mode="In" />
+          <Parameter Name="NombreOnco" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_ORIGENPACIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Codigo" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_SUBMATERIAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodMaterial" Type="int" Mode="In" />
+          <Parameter Name="CodMaterial1" Type="int" Mode="In" />
+          <Parameter Name="NombreMaterial" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_TIPOINFORME" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Codigoinf" Type="int" Mode="In" />
+          <Parameter Name="NombreInforme" Type="ntext" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_TIPORESULTADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodigoRes1" Type="smallint" Mode="In" />
+          <Parameter Name="CodigoRes2" Type="smallint" Mode="In" />
+          <Parameter Name="CodigoRes3" Type="smallint" Mode="In" />
+          <Parameter Name="NombreRes1" Type="nvarchar" Mode="In" />
+          <Parameter Name="NombreRes2" Type="nvarchar" Mode="In" />
+          <Parameter Name="NombreRes3" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClaseRes" Type="nvarchar" Mode="In" />
+          <Parameter Name="opcion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'Laboratorio.dbo.INFORINA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="INFORINA">
+        <Property Name="CodInfOri" Type="int" />
+        <Property Name="CodInfOri1" Type="int" />
+        <Property Name="NombreInfOri" Type="ntext" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Laboratorio.dbo.INFOTRO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="INFOTRO">
+        <Property Name="CodInfOtro" Type="int" />
+        <Property Name="CodInfOtro1" Type="int" />
+        <Property Name="NombreInfOtro" Type="ntext" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Laboratorio.dbo.NOTACOLPO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="NOTACOLPO">
+        <Property Name="CodigoNota" Type="smallint" />
+        <Property Name="Observacion" Type="ntext" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Laboratorio.dbo.NOTAMAT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="NOTAMAT">
+        <Property Name="CodigoNota" Type="int" />
+        <Property Name="Observacion" Type="ntext" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Laboratorio.dbo.NOTAORI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="NOTAORI">
+        <Property Name="CodigoNota" Type="int" />
+        <Property Name="Observacion" Type="ntext" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Laboratorio.dbo.ONCOLOGIA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="ONCOLOGIA">
+        <Property Name="CodInf" Type="smallint" />
+        <Property Name="CodOnco1" Type="int" />
+        <Property Name="NombreOnco" Type="ntext" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LaboratorioModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LaboratorioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ANATOMOPATOLOGIA" EntityType="LaboratorioModel.ANATOMOPATOLOGIA" />
+          <EntitySet Name="CITOLOGIAORINA" EntityType="LaboratorioModel.CITOLOGIAORINA" />
+          <EntitySet Name="CITOLOGIAOTRO" EntityType="LaboratorioModel.CITOLOGIAOTRO" />
+          <EntitySet Name="COLPOCITOLOGIA" EntityType="LaboratorioModel.COLPOCITOLOGIA" />
+          <EntitySet Name="COLPOUSOINTERNO" EntityType="LaboratorioModel.COLPOUSOINTERNO" />
+          <EntitySet Name="MACRO" EntityType="LaboratorioModel.MACRO" />
+          <EntitySet Name="MATERIAL" EntityType="LaboratorioModel.MATERIAL" />
+          <EntitySet Name="MEDICO" EntityType="LaboratorioModel.MEDICO" />
+          <EntitySet Name="MICRO" EntityType="LaboratorioModel.MICRO" />
+          <EntitySet Name="NOTAANA" EntityType="LaboratorioModel.NOTAANA" />
+          <EntitySet Name="ORIGENPACIENTE" EntityType="LaboratorioModel.ORIGENPACIENTE" />
+          <EntitySet Name="SUBMATERIAL" EntityType="LaboratorioModel.SUBMATERIAL" />
+          <EntitySet Name="sysdiagrams" EntityType="LaboratorioModel.sysdiagrams" />
+          <EntitySet Name="TIPOINFORME" EntityType="LaboratorioModel.TIPOINFORME" />
+          <EntitySet Name="TIPORESULTADO" EntityType="LaboratorioModel.TIPORESULTADO" />
+          <AssociationSet Name="FK_MACRO_ANATOMOPATOLOGIA" Association="LaboratorioModel.FK_MACRO_ANATOMOPATOLOGIA">
+            <End Role="ANATOMOPATOLOGIA" EntitySet="ANATOMOPATOLOGIA" />
+            <End Role="MACRO" EntitySet="MACRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MICRO_ANATOMOPATOLOGIA" Association="LaboratorioModel.FK_MICRO_ANATOMOPATOLOGIA">
+            <End Role="ANATOMOPATOLOGIA" EntitySet="ANATOMOPATOLOGIA" />
+            <End Role="MICRO" EntitySet="MICRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NOTAANA_ANATOMOPATOLOGIA" Association="LaboratorioModel.FK_NOTAANA_ANATOMOPATOLOGIA">
+            <End Role="ANATOMOPATOLOGIA" EntitySet="ANATOMOPATOLOGIA" />
+            <End Role="NOTAANA" EntitySet="NOTAANA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIPORESULTADO_TIPOINFORME" Association="LaboratorioModel.FK_TIPORESULTADO_TIPOINFORME">
+            <End Role="TIPOINFORME" EntitySet="TIPOINFORME" />
+            <End Role="TIPORESULTADO" EntitySet="TIPORESULTADO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ANATOMOPATOLOGIA">
+          <Key>
+            <PropertyRef Name="NroInfo" />
+          </Key>
+          <Property Name="NroInfo" Type="Int32" Nullable="false" />
+          <Property Name="FechaInf" Type="DateTime" />
+          <Property Name="Paciente" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="Procedencia" Type="Int16" />
+          <Property Name="MedSol" Type="Int16" />
+          <Property Name="MaterialAna1" Type="Int32" />
+          <Property Name="MaterialAna2" Type="Int16" />
+          <Property Name="ResumenAna1" Type="Int32" />
+          <Property Name="resumenAna2" Type="Int16" />
+          <NavigationProperty Name="MACRO" Relationship="LaboratorioModel.FK_MACRO_ANATOMOPATOLOGIA" FromRole="ANATOMOPATOLOGIA" ToRole="MACRO" />
+          <NavigationProperty Name="MICRO" Relationship="LaboratorioModel.FK_MICRO_ANATOMOPATOLOGIA" FromRole="ANATOMOPATOLOGIA" ToRole="MICRO" />
+          <NavigationProperty Name="NOTAANA" Relationship="LaboratorioModel.FK_NOTAANA_ANATOMOPATOLOGIA" FromRole="ANATOMOPATOLOGIA" ToRole="NOTAANA" />
+        </EntityType>
+        <EntityType Name="CITOLOGIAORINA">
+          <Key>
+            <PropertyRef Name="NroInfo" />
+          </Key>
+          <Property Name="NroInfo" Type="Int32" Nullable="false" />
+          <Property Name="FechaInf" Type="DateTime" />
+          <Property Name="Paciente" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="Procedencia" Type="Int16" />
+          <Property Name="MedSol" Type="Int16" />
+          <Property Name="CodCito1" Type="Int32" />
+          <Property Name="CodCito2" Type="Int16" />
+          <Property Name="Resumen" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CITOLOGIAOTRO">
+          <Key>
+            <PropertyRef Name="NroInfo" />
+          </Key>
+          <Property Name="NroInfo" Type="Int32" Nullable="false" />
+          <Property Name="FechaInf" Type="DateTime" />
+          <Property Name="Paciente" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="Procedencia" Type="Int16" />
+          <Property Name="MedSol" Type="Int16" />
+          <Property Name="CodMat1" Type="Int32" />
+          <Property Name="CodMat2" Type="Int16" />
+          <Property Name="Material" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CodRes1" Type="Int32" Nullable="false" />
+          <Property Name="CodRes2" Type="Int32" />
+          <Property Name="Resumen" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="COLPOCITOLOGIA">
+          <Key>
+            <PropertyRef Name="NroInfo" />
+          </Key>
+          <Property Name="NroInfo" Type="Int16" Nullable="false" />
+          <Property Name="FechaInf" Type="DateTime" />
+          <Property Name="Paciente" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="FechaMens" Type="DateTime" />
+          <Property Name="FechaObse" Type="DateTime" />
+          <Property Name="Procedencia" Type="Int16" />
+          <Property Name="MedSol" Type="Int16" />
+          <Property Name="CodRes1" Type="Int32" />
+          <Property Name="CodRes2" Type="Int16" />
+          <Property Name="Resumen" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Trofismo" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="Eosi" Type="Int16" />
+          <Property Name="Ciano" Type="Int16" />
+          <Property Name="Inter" Type="Int16" />
+          <Property Name="Para" Type="Int16" />
+          <Property Name="Flora" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="Leuco" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="Histio" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="Glob" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="COLPOUSOINTERNO">
+          <Key>
+            <PropertyRef Name="CodigoUso" />
+          </Key>
+          <Property Name="CodigoUso" Type="Int16" Nullable="false" />
+          <Property Name="NombreUso" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="Unidad" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Respuesta" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="Cantidad" Type="Int16" />
+          <Property Name="CargaNom1" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom2" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom3" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom4" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom5" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom6" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom7" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom8" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom9" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom10" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom11" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom12" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom13" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom14" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+          <Property Name="CargaNom15" Type="String" MaxLength="950" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MACRO">
+          <Key>
+            <PropertyRef Name="CodMacro" />
+          </Key>
+          <Property Name="CodMacro" Type="Int32" Nullable="false" />
+          <Property Name="CodMacro1" Type="Int32" />
+          <Property Name="CodMacro2" Type="Int32" />
+          <Property Name="NombreMacro" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ANATOMOPATOLOGIA" Relationship="LaboratorioModel.FK_MACRO_ANATOMOPATOLOGIA" FromRole="MACRO" ToRole="ANATOMOPATOLOGIA" />
+        </EntityType>
+        <EntityType Name="MATERIAL">
+          <Key>
+            <PropertyRef Name="CodMaterial" />
+          </Key>
+          <Property Name="CodMaterial" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="900" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MEDICO">
+          <Key>
+            <PropertyRef Name="CodMedico" />
+          </Key>
+          <Property Name="CodMedico" Type="Int16" Nullable="false" />
+          <Property Name="NombreMedico" Type="String" MaxLength="960" Unicode="true" FixedLength="false" />
+          <Property Name="Direccion" Type="String" MaxLength="960" Unicode="true" FixedLength="false" />
+          <Property Name="TeMedico" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Colegiado" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="ObservacionesMedico" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MICRO">
+          <Key>
+            <PropertyRef Name="CodMicro" />
+            <PropertyRef Name="CodMicro1" />
+            <PropertyRef Name="CodMicro2" />
+          </Key>
+          <Property Name="CodMicro" Type="Int32" Nullable="false" />
+          <Property Name="CodMicro1" Type="Int32" Nullable="false" />
+          <Property Name="CodMicro2" Type="Int32" Nullable="false" />
+          <Property Name="NombreMicro" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ANATOMOPATOLOGIA" Relationship="LaboratorioModel.FK_MICRO_ANATOMOPATOLOGIA" FromRole="MICRO" ToRole="ANATOMOPATOLOGIA" />
+        </EntityType>
+        <EntityType Name="NOTAANA">
+          <Key>
+            <PropertyRef Name="CodigoNota" />
+          </Key>
+          <Property Name="CodigoNota" Type="Int32" Nullable="false" />
+          <Property Name="Observacion" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ANATOMOPATOLOGIA" Relationship="LaboratorioModel.FK_NOTAANA_ANATOMOPATOLOGIA" FromRole="NOTAANA" ToRole="ANATOMOPATOLOGIA" />
+        </EntityType>
+        <EntityType Name="ORIGENPACIENTE">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="900" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SUBMATERIAL">
+          <Key>
+            <PropertyRef Name="CodMaterial" />
+            <PropertyRef Name="CodMaterial1" />
+          </Key>
+          <Property Name="CodMaterial" Type="Int16" Nullable="false" />
+          <Property Name="CodMaterial1" Type="Int16" Nullable="false" />
+          <Property Name="NombreMaterial" Type="String" MaxLength="900" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TIPOINFORME">
+          <Key>
+            <PropertyRef Name="CodigoInf" />
+          </Key>
+          <Property Name="CodigoInf" Type="Int16" Nullable="false" />
+          <Property Name="NombreInforme" Type="String" MaxLength="90" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TIPORESULTADO" Relationship="LaboratorioModel.FK_TIPORESULTADO_TIPOINFORME" FromRole="TIPOINFORME" ToRole="TIPORESULTADO" />
+        </EntityType>
+        <EntityType Name="TIPORESULTADO">
+          <Key>
+            <PropertyRef Name="CodigoRes1" />
+            <PropertyRef Name="CodigoRes2" />
+            <PropertyRef Name="CodigoRes3" />
+          </Key>
+          <Property Name="CodigoRes1" Type="Int16" Nullable="false" />
+          <Property Name="CodigoRes2" Type="Int16" Nullable="false" />
+          <Property Name="CodigoRes3" Type="Int16" Nullable="false" />
+          <Property Name="NombreRes1" Type="String" MaxLength="900" Unicode="true" FixedLength="false" />
+          <Property Name="NombreRes2" Type="String" MaxLength="900" Unicode="true" FixedLength="false" />
+          <Property Name="NombreRes3" Type="String" MaxLength="900" Unicode="true" FixedLength="false" />
+          <Property Name="ClaseRes" Type="String" MaxLength="900" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TIPOINFORME" Relationship="LaboratorioModel.FK_TIPORESULTADO_TIPOINFORME" FromRole="TIPORESULTADO" ToRole="TIPOINFORME" />
+        </EntityType>
+        <Association Name="FK_MACRO_ANATOMOPATOLOGIA">
+          <End Role="ANATOMOPATOLOGIA" Type="LaboratorioModel.ANATOMOPATOLOGIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MACRO" Type="LaboratorioModel.MACRO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ANATOMOPATOLOGIA">
+              <PropertyRef Name="NroInfo" />
+            </Principal>
+            <Dependent Role="MACRO">
+              <PropertyRef Name="CodMacro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MICRO_ANATOMOPATOLOGIA">
+          <End Role="ANATOMOPATOLOGIA" Type="LaboratorioModel.ANATOMOPATOLOGIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MICRO" Type="LaboratorioModel.MICRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANATOMOPATOLOGIA">
+              <PropertyRef Name="NroInfo" />
+            </Principal>
+            <Dependent Role="MICRO">
+              <PropertyRef Name="CodMicro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NOTAANA_ANATOMOPATOLOGIA">
+          <End Role="ANATOMOPATOLOGIA" Type="LaboratorioModel.ANATOMOPATOLOGIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NOTAANA" Type="LaboratorioModel.NOTAANA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ANATOMOPATOLOGIA">
+              <PropertyRef Name="NroInfo" />
+            </Principal>
+            <Dependent Role="NOTAANA">
+              <PropertyRef Name="CodigoNota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIPORESULTADO_TIPOINFORME">
+          <End Role="TIPOINFORME" Type="LaboratorioModel.TIPOINFORME" Multiplicity="1" />
+          <End Role="TIPORESULTADO" Type="LaboratorioModel.TIPORESULTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOINFORME">
+              <PropertyRef Name="CodigoInf" />
+            </Principal>
+            <Dependent Role="TIPORESULTADO">
+              <PropertyRef Name="CodigoRes1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LaboratorioModelStoreContainer" CdmEntityContainer="LaboratorioEntities">
+          <EntitySetMapping Name="ANATOMOPATOLOGIA">
+            <EntityTypeMapping TypeName="LaboratorioModel.ANATOMOPATOLOGIA">
+              <MappingFragment StoreEntitySet="ANATOMOPATOLOGIA">
+                <ScalarProperty Name="NroInfo" ColumnName="NroInfo" />
+                <ScalarProperty Name="FechaInf" ColumnName="FechaInf" />
+                <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+                <ScalarProperty Name="Procedencia" ColumnName="Procedencia" />
+                <ScalarProperty Name="MedSol" ColumnName="MedSol" />
+                <ScalarProperty Name="MaterialAna1" ColumnName="MaterialAna1" />
+                <ScalarProperty Name="MaterialAna2" ColumnName="MaterialAna2" />
+                <ScalarProperty Name="ResumenAna1" ColumnName="ResumenAna1" />
+                <ScalarProperty Name="resumenAna2" ColumnName="resumenAna2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CITOLOGIAORINA">
+            <EntityTypeMapping TypeName="LaboratorioModel.CITOLOGIAORINA">
+              <MappingFragment StoreEntitySet="CITOLOGIAORINA">
+                <ScalarProperty Name="NroInfo" ColumnName="NroInfo" />
+                <ScalarProperty Name="FechaInf" ColumnName="FechaInf" />
+                <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+                <ScalarProperty Name="Procedencia" ColumnName="Procedencia" />
+                <ScalarProperty Name="MedSol" ColumnName="MedSol" />
+                <ScalarProperty Name="CodCito1" ColumnName="CodCito1" />
+                <ScalarProperty Name="CodCito2" ColumnName="CodCito2" />
+                <ScalarProperty Name="Resumen" ColumnName="Resumen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CITOLOGIAOTRO">
+            <EntityTypeMapping TypeName="LaboratorioModel.CITOLOGIAOTRO">
+              <MappingFragment StoreEntitySet="CITOLOGIAOTRO">
+                <ScalarProperty Name="NroInfo" ColumnName="NroInfo" />
+                <ScalarProperty Name="FechaInf" ColumnName="FechaInf" />
+                <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+                <ScalarProperty Name="Procedencia" ColumnName="Procedencia" />
+                <ScalarProperty Name="MedSol" ColumnName="MedSol" />
+                <ScalarProperty Name="CodMat1" ColumnName="CodMat1" />
+                <ScalarProperty Name="CodMat2" ColumnName="CodMat2" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="CodRes1" ColumnName="CodRes1" />
+                <ScalarProperty Name="CodRes2" ColumnName="CodRes2" />
+                <ScalarProperty Name="Resumen" ColumnName="Resumen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COLPOCITOLOGIA">
+            <EntityTypeMapping TypeName="LaboratorioModel.COLPOCITOLOGIA">
+              <MappingFragment StoreEntitySet="COLPOCITOLOGIA">
+                <ScalarProperty Name="NroInfo" ColumnName="NroInfo" />
+                <ScalarProperty Name="FechaInf" ColumnName="FechaInf" />
+                <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+                <ScalarProperty Name="FechaMens" ColumnName="FechaMens" />
+                <ScalarProperty Name="FechaObse" ColumnName="FechaObse" />
+                <ScalarProperty Name="Procedencia" ColumnName="Procedencia" />
+                <ScalarProperty Name="MedSol" ColumnName="MedSol" />
+                <ScalarProperty Name="CodRes1" ColumnName="CodRes1" />
+                <ScalarProperty Name="CodRes2" ColumnName="CodRes2" />
+                <ScalarProperty Name="Resumen" ColumnName="Resumen" />
+                <ScalarProperty Name="Trofismo" ColumnName="Trofismo" />
+                <ScalarProperty Name="Eosi" ColumnName="Eosi" />
+                <ScalarProperty Name="Ciano" ColumnName="Ciano" />
+                <ScalarProperty Name="Inter" ColumnName="Inter" />
+                <ScalarProperty Name="Para" ColumnName="Para" />
+                <ScalarProperty Name="Flora" ColumnName="Flora" />
+                <ScalarProperty Name="Leuco" ColumnName="Leuco" />
+                <ScalarProperty Name="Histio" ColumnName="Histio" />
+                <ScalarProperty Name="Glob" ColumnName="Glob" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COLPOUSOINTERNO">
+            <EntityTypeMapping TypeName="LaboratorioModel.COLPOUSOINTERNO">
+              <MappingFragment StoreEntitySet="COLPOUSOINTERNO">
+                <ScalarProperty Name="CodigoUso" ColumnName="CodigoUso" />
+                <ScalarProperty Name="NombreUso" ColumnName="NombreUso" />
+                <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="CargaNom1" ColumnName="CargaNom1" />
+                <ScalarProperty Name="CargaNom2" ColumnName="CargaNom2" />
+                <ScalarProperty Name="CargaNom3" ColumnName="CargaNom3" />
+                <ScalarProperty Name="CargaNom4" ColumnName="CargaNom4" />
+                <ScalarProperty Name="CargaNom5" ColumnName="CargaNom5" />
+                <ScalarProperty Name="CargaNom6" ColumnName="CargaNom6" />
+                <ScalarProperty Name="CargaNom7" ColumnName="CargaNom7" />
+                <ScalarProperty Name="CargaNom8" ColumnName="CargaNom8" />
+                <ScalarProperty Name="CargaNom9" ColumnName="CargaNom9" />
+                <ScalarProperty Name="CargaNom10" ColumnName="CargaNom10" />
+                <ScalarProperty Name="CargaNom11" ColumnName="CargaNom11" />
+                <ScalarProperty Name="CargaNom12" ColumnName="CargaNom12" />
+                <ScalarProperty Name="CargaNom13" ColumnName="CargaNom13" />
+                <ScalarProperty Name="CargaNom14" ColumnName="CargaNom14" />
+                <ScalarProperty Name="CargaNom15" ColumnName="CargaNom15" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MACRO">
+            <EntityTypeMapping TypeName="LaboratorioModel.MACRO">
+              <MappingFragment StoreEntitySet="MACRO">
+                <ScalarProperty Name="CodMacro" ColumnName="CodMacro" />
+                <ScalarProperty Name="CodMacro1" ColumnName="CodMacro1" />
+                <ScalarProperty Name="CodMacro2" ColumnName="CodMacro2" />
+                <ScalarProperty Name="NombreMacro" ColumnName="NombreMacro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MATERIAL">
+            <EntityTypeMapping TypeName="LaboratorioModel.MATERIAL">
+              <MappingFragment StoreEntitySet="MATERIAL">
+                <ScalarProperty Name="CodMaterial" ColumnName="CodMaterial" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICO">
+            <EntityTypeMapping TypeName="LaboratorioModel.MEDICO">
+              <MappingFragment StoreEntitySet="MEDICO">
+                <ScalarProperty Name="CodMedico" ColumnName="CodMedico" />
+                <ScalarProperty Name="NombreMedico" ColumnName="NombreMedico" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TeMedico" ColumnName="TeMedico" />
+                <ScalarProperty Name="Colegiado" ColumnName="Colegiado" />
+                <ScalarProperty Name="ObservacionesMedico" ColumnName="ObservacionesMedico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MICRO">
+            <EntityTypeMapping TypeName="LaboratorioModel.MICRO">
+              <MappingFragment StoreEntitySet="MICRO">
+                <ScalarProperty Name="CodMicro" ColumnName="CodMicro" />
+                <ScalarProperty Name="CodMicro1" ColumnName="CodMicro1" />
+                <ScalarProperty Name="CodMicro2" ColumnName="CodMicro2" />
+                <ScalarProperty Name="NombreMicro" ColumnName="NombreMicro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NOTAANA">
+            <EntityTypeMapping TypeName="LaboratorioModel.NOTAANA">
+              <MappingFragment StoreEntitySet="NOTAANA">
+                <ScalarProperty Name="CodigoNota" ColumnName="CodigoNota" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORIGENPACIENTE">
+            <EntityTypeMapping TypeName="LaboratorioModel.ORIGENPACIENTE">
+              <MappingFragment StoreEntitySet="ORIGENPACIENTE">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBMATERIAL">
+            <EntityTypeMapping TypeName="LaboratorioModel.SUBMATERIAL">
+              <MappingFragment StoreEntitySet="SUBMATERIAL">
+                <ScalarProperty Name="CodMaterial" ColumnName="CodMaterial" />
+                <ScalarProperty Name="CodMaterial1" ColumnName="CodMaterial1" />
+                <ScalarProperty Name="NombreMaterial" ColumnName="NombreMaterial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LaboratorioModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOINFORME">
+            <EntityTypeMapping TypeName="LaboratorioModel.TIPOINFORME">
+              <MappingFragment StoreEntitySet="TIPOINFORME">
+                <ScalarProperty Name="CodigoInf" ColumnName="CodigoInf" />
+                <ScalarProperty Name="NombreInforme" ColumnName="NombreInforme" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPORESULTADO">
+            <EntityTypeMapping TypeName="LaboratorioModel.TIPORESULTADO">
+              <MappingFragment StoreEntitySet="TIPORESULTADO">
+                <ScalarProperty Name="CodigoRes1" ColumnName="CodigoRes1" />
+                <ScalarProperty Name="CodigoRes2" ColumnName="CodigoRes2" />
+                <ScalarProperty Name="CodigoRes3" ColumnName="CodigoRes3" />
+                <ScalarProperty Name="NombreRes1" ColumnName="NombreRes1" />
+                <ScalarProperty Name="NombreRes2" ColumnName="NombreRes2" />
+                <ScalarProperty Name="NombreRes3" ColumnName="NombreRes3" />
+                <ScalarProperty Name="ClaseRes" ColumnName="ClaseRes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model_Lab">
+        <EntityTypeShape EntityType="LaboratorioModel.ANATOMOPATOLOGIA" Width="1.5" PointX="0.75" PointY="3" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.CITOLOGIAORINA" Width="1.5" PointX="5.75" PointY="4.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.CITOLOGIAOTRO" Width="1.5" PointX="7.75" PointY="4.75" Height="3.1340950520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.COLPOCITOLOGIA" Width="1.5" PointX="5.75" PointY="8.75" Height="4.6725065104166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.COLPOUSOINTERNO" Width="1.5" PointX="7.75" PointY="8.75" Height="4.8648079427083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.MACRO" Width="1.5" PointX="3" PointY="1.125" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.MATERIAL" Width="1.5" PointX="0.75" PointY="9.75" Height="1.4033821614583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.MEDICO" Width="1.5" PointX="2.75" PointY="9.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.MICRO" Width="1.5" PointX="3" PointY="3.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.NOTAANA" Width="1.5" PointX="3" PointY="6.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.ORIGENPACIENTE" Width="1.5" PointX="9.75" PointY="4.75" Height="1.4033821614583353" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.SUBMATERIAL" Width="1.5" PointX="9.75" PointY="7.75" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="0.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.TIPOINFORME" Width="1.5" PointX="5.75" PointY="1.375" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaboratorioModel.TIPORESULTADO" Width="1.5" PointX="8" PointY="1" Height="2.5571907552083388" IsExpanded="true" />
+        <AssociationConnector Association="LaboratorioModel.FK_MACRO_ANATOMOPATOLOGIA" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="3" />
+          <ConnectorPoint PointX="1.5" PointY="2.0624995" />
+          <ConnectorPoint PointX="3" PointY="2.0624995" />
+        </AssociationConnector>
+        <AssociationConnector Association="LaboratorioModel.FK_MICRO_ANATOMOPATOLOGIA" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.8651432291666659" />
+          <ConnectorPoint PointX="3" PointY="4.8651432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="LaboratorioModel.FK_NOTAANA_ANATOMOPATOLOGIA" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="6.326396484375" />
+          <ConnectorPoint PointX="1.5" PointY="7.422841796875" />
+          <ConnectorPoint PointX="3" PointY="7.422841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="LaboratorioModel.FK_TIPORESULTADO_TIPOINFORME" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="2.1728417968750016" />
+          <ConnectorPoint PointX="8" PointY="2.1728417968750016" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

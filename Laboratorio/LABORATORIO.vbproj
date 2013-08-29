@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE0F0A30-C56E-4D07-A966-9872D2CC2969}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Laboratorio.My.MyApplication</StartupObject>
+    <RootNamespace>Laboratorio</RootNamespace>
+    <AssemblyName>Laboratorio</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>F:\SIM_FINAL_LIC2\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>199</ApplicationRevision>
+    <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Laboratorio.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Laboratorio.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C1DFC6929482CF3C58F37550D43816CBAA588961</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SIM 2.0_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCitologiadeotrasmuestras.Designer.vb">
+      <DependentUpon>FrmCitologiadeotrasmuestras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCitologiadeotrasmuestras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnatomopatologia.Designer.vb">
+      <DependentUpon>FrmAnatomopatologia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAnatomopatologia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCitologiadeOrina.Designer.vb">
+      <DependentUpon>FrmCitologiadeOrina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCitologiadeOrina.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmcolpocitologia.Designer.vb">
+      <DependentUpon>Frmcolpocitologia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmcolpocitologia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmenfermedades.Designer.vb">
+      <DependentUpon>Frmenfermedades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmenfermedades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frminforme.Designer.vb">
+      <DependentUpon>Frminforme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frminforme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMacroscopia.Designer.vb">
+      <DependentUpon>FrmMacroscopia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMacroscopia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMicroscopia.Designer.vb">
+      <DependentUpon>FrmMicroscopia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMicroscopia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotas.Designer.vb">
+      <DependentUpon>FrmNotas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNotas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPacientes.Designer.vb">
+      <DependentUpon>frmPacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmresultado.Designer.vb">
+      <DependentUpon>Frmresultado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmresultado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmmedico.Designer.vb">
+      <DependentUpon>Frmmedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmmedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.vb">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmprocedencia.Designer.vb">
+      <DependentUpon>Frmprocedencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmprocedencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmmateriales.Designer.vb">
+      <DependentUpon>Frmmateriales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmmateriales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmresultadoscolpocitologia.Designer.vb">
+      <DependentUpon>Frmresultadoscolpocitologia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmresultadoscolpocitologia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSubMateriales.Designer.vb">
+      <DependentUpon>FrmSubMateriales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSubMateriales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listadoanatomopatologia.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadoanatomopatologia.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadocitologiaorina.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadocitologiaorina.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadocitologiaotro.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadocitologiaotro.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadocolpocitologia.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadocolpocitologia.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadocolpousointerno.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadocolpousointerno.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadomaterial.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadomaterial.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadomedico.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadomedico.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadonombrematerial.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadonombrematerial.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadonombremedico.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadonombremedico.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadonombreobrasocial.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadonombreobrasocial.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadonombrepaciente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadonombrepaciente.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadoobrasocial.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadoobrasocial.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadopaciente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadopaciente.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadoresumenpaciente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadoresumenpaciente.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadototalmedico.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadototalmedico.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadototalobra.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadototalobra.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="listadototaltipoinforme.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listadototaltipoinforme.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="MdGeneral.vb" />
+    <Compile Include="ModelLaboratorio.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLaboratorio.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SEGURIDADDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGURIDADDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="sobreana.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sobreana.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sobrecolpo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sobrecolpo.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="sobregrupo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sobregrupo.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="sobremat.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sobremat.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="sobreori.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sobreori.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnatomopatologia.resx">
+      <DependentUpon>FrmAnatomopatologia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCitologiadeOrina.resx">
+      <DependentUpon>FrmCitologiadeOrina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCitologiadeotrasmuestras.resx">
+      <DependentUpon>FrmCitologiadeotrasmuestras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmcolpocitologia.resx">
+      <DependentUpon>Frmcolpocitologia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmenfermedades.resx">
+      <DependentUpon>Frmenfermedades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frminforme.resx">
+      <DependentUpon>Frminforme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMacroscopia.resx">
+      <DependentUpon>FrmMacroscopia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmmateriales.resx">
+      <DependentUpon>Frmmateriales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMicroscopia.resx">
+      <DependentUpon>FrmMicroscopia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotas.resx">
+      <DependentUpon>FrmNotas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPacientes.resx">
+      <DependentUpon>frmPacientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmresultado.resx">
+      <DependentUpon>Frmresultado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmmedico.resx">
+      <DependentUpon>Frmmedico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmprocedencia.resx">
+      <DependentUpon>Frmprocedencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmresultadoscolpocitologia.resx">
+      <DependentUpon>Frmresultadoscolpocitologia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSubMateriales.resx">
+      <DependentUpon>FrmSubMateriales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadoanatomopatologia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadoanatomopatologia.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadocitologiaorina.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadocitologiaorina.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadocitologiaotro.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadocitologiaotro.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadocolpocitologia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadocolpocitologia.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadocolpousointerno.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadocolpousointerno.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadomaterial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadomaterial.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadomedico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadomedico.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadonombrematerial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadonombrematerial.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadonombremedico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadonombremedico.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadonombreobrasocial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadonombreobrasocial.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadonombrepaciente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadonombrepaciente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadoobrasocial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadoobrasocial.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadopaciente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadopaciente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadoresumenpaciente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadoresumenpaciente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadototalmedico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadototalmedico.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadototalobra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadototalobra.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listadototaltipoinforme.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listadototaltipoinforme.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sobreana.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>sobreana.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sobrecolpo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>sobrecolpo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sobregrupo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>sobregrupo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sobremat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>sobremat.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sobreori.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>sobreori.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModelLaboratorio.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelLaboratorio.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\LaboratorioEntities.datasource" />
+    <None Include="My Project\DataSources\MATERIAL.datasource" />
+    <None Include="My Project\DataSources\MEDICO.datasource" />
+    <None Include="My Project\DataSources\ORIGENPACIENTE.datasource" />
+    <None Include="My Project\DataSources\TIPOINFORME.datasource" />
+    <None Include="My Project\DataSources\TIPORESULTADO.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="SEGURIDADDataSet.xsc">
+      <DependentUpon>SEGURIDADDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SEGURIDADDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGURIDADDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SEGURIDADDataSet.xss">
+      <DependentUpon>SEGURIDADDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hospi2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\fondo_azul.jpg" />
+    <None Include="Resources\LoginImages.jpg" />
+    <Content Include="Laboratorio.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
